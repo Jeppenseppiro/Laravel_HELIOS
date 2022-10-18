@@ -20,8 +20,8 @@
 
 </head>
 
-<body class="font-montserrat antialiased">
-  <div id="{{ Route::is('map*') ? '' : 'app' }}" class="relative mx-auto pb-6 min-h-screen bg-gray-100">
+<body class="font-poppins antialiased">
+  <div id="{{ Route::is('map*') ? '' : 'app' }}" class="relative mx-auto pb-6 min-h-screen bg-gray-100 dark:bg-gray-600">
     @include('layouts.nav')
 
     <main

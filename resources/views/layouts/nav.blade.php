@@ -1,22 +1,22 @@
-<nav class="bg-white border-b border-gray-100 py-2 shadow">
+<nav class="border-gray-100 py-2 shadow dark:nav-dark">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
     <div class="pt-2">
-      <img class="object-contain h-20 w-20" src="{{ url('/images/logo.jpg') }}" alt="Company Logo" />
+      <img class="object-contain h-20 w-20" src="{{ url('/images/saturnine.png') }}" alt="Company Logo" />
     </div>
 
     <div class="hidden md:flex space-x-3 font-bold text-xl">
       <a href="{{ route('dashboard.index') }}"
-        class="inline-flex w-full justify-center rounded-none border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 {{ Route::is('dashboard*') ? 'bg-blue-500 text-gray-100' : '' }}">Dashboard</a>
+        class="border nav-button {{ Route::is('dashboard*') ? 'bg-blue-500 text-gray-100' : '' }}">Dashboard</a>
       <a href="{{ route('map.index') }}"
-        class="inline-flex w-full justify-center rounded-none border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 {{ Route::is('map*') ? 'bg-blue-500 text-gray-100' : '' }}">Map</a>
+        class="border nav-button {{ Route::is('map*') ? 'bg-blue-500 text-gray-100' : '' }}">Map</a>
       <a href="{{ route('database.index') }}"
-        class="inline-flex w-full justify-center rounded-none border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 {{ Route::is('database*') ? 'bg-blue-500 text-gray-100' : '' }}">Database</a>
+        class="border nav-button {{ Route::is('database*') ? 'bg-blue-500 text-gray-100' : '' }}">Database</a>
       <a href="{{ route('settings.index') }}"
-        class="inline-flex w-full justify-center rounded-none border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 {{ Route::is('settings*') ? 'bg-blue-500 text-gray-100' : '' }}">Settings</a>
+        class="border nav-button {{ Route::is('settings*') ? 'bg-blue-500 text-gray-100' : '' }}">Settings</a>
     </div>
 
 
-    <div class="hidden md:flex space-x-3 font-bold text-xl font-montserrat">
+    <div class="hidden md:flex space-x-3 font-bold text-xl">
       <div class="flex justify-center z-50">
         <div class="dropdown relative">
           <button
