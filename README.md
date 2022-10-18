@@ -8,12 +8,29 @@ Nicknamed HELIOS after an ancient Greek god [HELIOS](https://en.wikipedia.org/wi
 
 A refactor system of the [exisiting](https://github.com/Jeppenseppiro/HELIOS) geographical information system made for an electrical company here in Leyte. One of the reasons why this was made was because during the 2013 super typhoon Yolanda, record-keeping and fetching of the properties (ex. electrical posts, transformers) was a nightmare. Automating that process was one solution to the problem.
 
+## Requirements
+
+Make sure you have installed [Node](https://nodejs.org/en/) and [Composer](https://getcomposer.org/)
+
 ## Installation
+
+Run the command below install the proper dependencies needed
+
+```
+npm install
+composer install
+```
 
 Run the command below to migrate the database and seed the data to populate
 
 ```
 php artisan migrate:fresh --seed
+```
+
+Run the command below to migrate the database and seed the data to populate
+
+```
+npm run dev
 ```
 
 ## Company
