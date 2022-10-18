@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DistributionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+Route::middleware(['auth', 'verified'])->group(function () {
+  // Dashboard Section
+  Route::get('/dashboard2', function () {
+    return view('web.dashboard.index');
+  })->name('dashboard.index');
+
+  //Map Section
+  Route::get('/map', function () {
+    return view('web.map.index');
+  })->name('map.index');
+
+  //Database Section
+  Route::get('/database', function () {
+    return view('web.database.index');
+  })->name('database.index');
+
+  Route::get('/database/distribution/create', [DistributionController::class, 'create'])->name('database.distribution.create');
+
+  //Settings Section
+  Route::get('/settings', function () {
+    return view('web.settings.index');
+  })->name('settings.index');
+});
+
+
+
+
+
+Route::get('/dashboard', function () {
+  return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
