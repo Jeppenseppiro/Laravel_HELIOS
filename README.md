@@ -13,7 +13,7 @@ Geographical Information System (GIS) for the LEYECO V electrical company in Ley
 
 A refactor system of the [exisiting](https://github.com/Jeppenseppiro/HELIOS) geographical information system made for an electrical company here in Leyte. One of the reasons why this was made was because during the 2013 super typhoon Yolanda, record-keeping and fetching of the properties (ex. electrical posts, transformers) was a nightmare. Automating that process was one solution to the problem.
 
-## Getting started
+## Installation
 
 Run the command below to migrate the database and seed the data to populate
 
@@ -25,24 +25,8 @@ php artisan migrate:fresh --seed
 
 We would like to extend our gratitude to [LEYECO V](https://www.leyeco-v.com.ph/) for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
 ## Tools
 
-[Laravel](https://laravel.com/)
-[Vue](https://vuejs.org/)
-[Tailwind](https://tailwindcss.com/)
+- **[Laravel](https://laravel.com/)**
+- **[Vue](https://vuejs.org/)**
+- **[Tailwind](https://tailwindcss.com/)**
