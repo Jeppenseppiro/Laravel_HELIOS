@@ -1,6 +1,6 @@
-<nav class="border-gray-100 py-2 shadow dark:nav-dark">
+<nav class="border-gray-100 py-2 shadow bg-white dark:nav-dark">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-    <div class="pt-2">
+    <div class="">
       <img class="object-contain h-20 w-20" src="{{ url('/images/saturnine.png') }}" alt="Company Logo" />
     </div>
 
@@ -17,6 +17,35 @@
 
 
     <div class="hidden md:flex space-x-3 font-bold text-xl">
+      <div class="py-2">
+        <div class="dropdown relative">
+          <button class="account-dropdown">
+            <span class="mr-1">Account</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 bg-white pt-1">
+            <li>
+              <div class="py-3 px-4 text-sm text-gray-900 dark:text-white border-b border-gray-100">
+                <div>{{ Auth::user()->name }}</div>
+                <div class="font-medium truncate">{{ Auth::user()->email }}</div>
+              </div>
+            </li>
+            <li class="">
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <x-responsive-nav-link :href="route('logout')"
+                  onclick="event.preventDefault(); this.closest('form').submit();">
+                  {{ __('Log Out') }}
+                </x-responsive-nav-link>
+              </form>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      {{-- 
       <div class="flex justify-center z-50">
         <div class="dropdown relative">
           <button
@@ -89,7 +118,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> --}}
     </div>
 
   </div>

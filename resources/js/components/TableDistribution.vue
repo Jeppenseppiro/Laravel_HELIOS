@@ -55,46 +55,32 @@
           </td>
           <td class="flex items-center py-5 px-7 space-x-3 ">
             <button @click="deleteRowTableEvent(k)" class="button-danger text-white p-2">
-              <span class="far fa-trash-alt fa-2xl"></span>
+              <span class="far fa-trash-alt fa-xl"></span>
             </button>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <div v-if="!rowDistributions.length <= 0" class="p-2 flex justify-center bg-white">
+      <button type="submit" class="button-success p-2 w-full">SUBMIT</button>
+    </div>
+
   </div>
 </template>
 
 <script>
-  // var app = new Vue({
-  //   el: "#app",
-  //   data: {
-  //     rowDistribution: [{
-  //       distribution_id: '',
-  //       distribution_type: '',
-  //       distribution_latitude: '',
-  //       distribution_longitude: '',
-  //       distribution_description: '',
-  //       line_total: 2
-  //     }],
-  //   },
-  //   methods: {
-  //     addRowTableEvent() {
-  //       this.rowDistribution.push({
-  //         distribution_id: '',
-  //         distribution_type: '',
-  //         distribution_latitude: '',
-  //         distribution_longitude: '',
-  //         distribution_description: '',
-  //         line_total: 2
-  //       });
-  //       this.count++
-  //       console.log(this.rowDistribution[0].line_total++);
-  //     }
-  //   },
-  // });
+  import axios from "axios";
+
   export default {
     mounted() {
-      console.log("Table Distribution component mounted.");
+      axios
+        .get('/types')
+        .then(response => (this.info = response))
+      // fetch("/types")
+      //   .then(response => response.json())
+      //   .then(data => (this.totalVuePackages = data.total));
+      console.log(this.info);
     },
     data() {
       return {
@@ -110,6 +96,10 @@
       }
     },
     methods: {
+      // async fetchCatFacts() {
+      //     const catFactsResponse = await axios.get<AnimalFacts[]>('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=5')
+      //     this.catFacts = catFactsResponse.data
+      // },
       addRowTableEvent() {
         this.rowDistributions.push({
           distribution_id: '',
@@ -131,6 +121,21 @@
 
 <style scoped>
   .table-input {
-    @apply bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    @apply 
+    bg-gray-50 
+    border-gray-300 
+    text-gray-900 
+    text-sm 
+    rounded-none 
+    focus:ring-blue-500 
+    focus:border-blue-500 
+    block w-full 
+    p-2.5 
+    dark:bg-gray-700 
+    dark:border-gray-600 
+    dark:placeholder-gray-400 
+    dark:text-white 
+    dark:focus:ring-blue-500 
+    dark:focus:border-blue-500
   }
 </style>

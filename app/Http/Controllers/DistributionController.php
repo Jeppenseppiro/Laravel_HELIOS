@@ -86,4 +86,12 @@ class DistributionController extends Controller
   {
     //
   }
+
+  public function types()
+  {
+    //
+    $distributionTypes = DistributionType::get();
+    return $distributionTypes->toJson();
+    dd($distributionTypes);
+  }
 }

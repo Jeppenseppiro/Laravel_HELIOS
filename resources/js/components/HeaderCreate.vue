@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:form-dark-header flex items-center justify-between">
+  <div class="form-header dark:form-dark-header flex items-center justify-between">
     <div class="flex space-x-3">
       {{ title }}
     </div>

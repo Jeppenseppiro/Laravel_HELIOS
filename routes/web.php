@@ -43,7 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-
+Route::get('/database/distribution/types', [DistributionController::class, 'types'])->name('database.distribution.types');
 
 
 Route::get('/dashboard', function () {
