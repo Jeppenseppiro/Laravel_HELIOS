@@ -42,3 +42,5 @@ We would like to extend our gratitude to [LEYECO V](https://www.leyeco-v.com.ph/
 - **[Laravel](https://laravel.com/)**
 - **[Vue](https://vuejs.org/)**
 - **[Tailwind](https://tailwindcss.com/)**
+- **[Leaflet](https://leafletjs.com/)**
+- **[Sweetalert2](https://sweetalert2.github.io/)**

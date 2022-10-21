@@ -17,10 +17,10 @@ return new class extends Migration
       $table->uuid('id')->primary();
       $table->timestamps();
       $table->integer('created_by');
-      $table->integer('updated_by');
+      $table->integer('updated_by')->nullable();
       $table->string('distribution_id', 25);
       $table->integer('distribution_type');
-      $table->text('distribution_description');
+      $table->text('distribution_description')->nullable();
       $table->float('distribution_latitude');
       $table->float('distribution_longitude');
     });

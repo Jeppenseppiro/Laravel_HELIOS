@@ -21,11 +21,15 @@
 </head>
 
 <body class="font-poppins antialiased">
-  <div id="{{ Route::is('map*') ? '' : 'app' }}" class="relative mx-auto pb-6 min-h-screen bg-gray-100 dark:bg-gray-600">
+
+
+  <div id="{{ Route::is('map*') ? '' : 'app' }}"
+    class="relative mx-auto pb-6 min-h-screen bg-gray-100 dark:bg-gray-600">
     @include('layouts.nav')
 
-    <main
-      class="pt-6 {{ Route::is('map*') || Route::is('database.index') ? '' : 'max-w-7xl' }} mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="pt-6 {{ Route::is('map*') ? '' : 'max-w-7xl' }} mx-auto px-4 sm:px-6 lg:px-8">
+      @include('web.includes.error_message')
+
       @yield('content')
     </main>
   </div>
