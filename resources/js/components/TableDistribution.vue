@@ -8,16 +8,16 @@
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="py-3 px-6">
-            Distribution ID
+            <label class="text-red-500">*</label> Distribution ID 
           </th>
           <th scope="col" class="py-3 px-6 w-72">
-            Distribution Type
+            <label class="text-red-500">*</label> Distribution Type
           </th>
           <th scope="col" class="py-3 px-6">
-            Latitude
+            <label class="text-red-500">*</label> Latitude
           </th>
           <th scope="col" class="py-3 px-6">
-            Longitude
+            <label class="text-red-500">*</label> Longitude
           </th>
           <th scope="col" class="py-3 px-6">
             Description
@@ -31,27 +31,23 @@
         <tr v-for="(rowDistribution, k) in rowDistributions" :key="k" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="py-4 px-6">
             <div>
-              <input type="text" id="distribution_id" v-model="rowDistribution.distribution_id" class="table-input" placeholder="Distribution ID" required>
+              <input type="text" id="distribution_id" name="distribution_id[]" v-model="rowDistribution.distribution_id" class="table-input" placeholder="Distribution ID" required>
             </div>
           </td>
           <td class="py-4 px-6">
-            <select id="countries" class="table-input" required>
-              <option selected>Choose a country</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
+            <select id="distribution_type" name="distribution_type[]" class="table-input" required>
+              <option disabled selected>Choose a type</option>
+              <option v-for="(distributionType, t) in distributionTypes" :key="t" :value="distributionType.id">{{ distributionType.distribution_type }}</option>
             </select>
-            <!-- <input type="text" id="distribution_id" v-model="rowDistribution.distribution_type" class="table-input" placeholder="Distribution Type" required> -->
           </td>
           <td class="py-4 px-6">
-            <input type="text" id="distribution_latitude" v-model="rowDistribution.distribution_latitude" class="table-input" placeholder="Latitude" required>
+            <input type="text" id="distribution_latitude" name="distribution_latitude[]" v-model="rowDistribution.distribution_latitude" class="table-input" placeholder="Latitude" required>
           </td>
           <td class="py-4 px-6">
-            <input type="text" id="distribution_longitude" v-model="rowDistribution.distribution_longitude" class="table-input" placeholder="Longitude" required>
+            <input type="text" id="distribution_longitude" name="distribution_longitude[]" v-model="rowDistribution.distribution_longitude" class="table-input" placeholder="Longitude" required>
           </td>
           <td class="py-4 px-6">
-            <input type="text" id="distribution_description" v-model="rowDistribution.distribution_description" class="table-input" placeholder="Description">
+            <textarea id="distribution_description" name="distribution_description[]" v-model="rowDistribution.distribution_description" class="table-input" placeholder="Description" rows="1"></textarea>
           </td>
           <td class="flex items-center py-5 px-7 space-x-3 ">
             <button @click="deleteRowTableEvent(k)" class="button-danger text-white p-2">
@@ -63,7 +59,7 @@
     </table>
 
     <div v-if="!rowDistributions.length <= 0" class="p-2 flex justify-center bg-white">
-      <button type="submit" class="button-success p-2 w-full">SUBMIT</button>
+      <button type="submit" class="button-success p-2 w-32">SUBMIT</button>
     </div>
 
   </div>
@@ -74,16 +70,11 @@
 
   export default {
     mounted() {
-      axios
-        .get('/types')
-        .then(response => (this.info = response))
-      // fetch("/types")
-      //   .then(response => response.json())
-      //   .then(data => (this.totalVuePackages = data.total));
-      console.log(this.info);
+      console.log("Table Distribution component mounted")
     },
     data() {
       return {
+        distributionTypes: [],
         rowDistributions: [{
           distribution_id: '',
           distribution_type: '',
@@ -92,14 +83,9 @@
           distribution_description: '',
         }],
         line_num: 1
-        
       }
     },
     methods: {
-      // async fetchCatFacts() {
-      //     const catFactsResponse = await axios.get<AnimalFacts[]>('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=5')
-      //     this.catFacts = catFactsResponse.data
-      // },
       addRowTableEvent() {
         this.rowDistributions.push({
           distribution_id: '',
@@ -113,9 +99,16 @@
       },
       deleteRowTableEvent(index) {
         this.rowDistributions.splice(index, 1);
+      },
+      getDistributionTypes(){
+        fetch("types")
+          .then(response => response.json())
+          .then(json => this.distributionTypes = json.map(values => values))
       }
     },
-    
+    created(){
+      this.getDistributionTypes();
+    }
   };
 </script>
 

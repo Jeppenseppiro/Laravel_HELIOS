@@ -42,8 +42,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
   })->name('settings.index');
 });
 
-
+Route::post('/database/distribution/store', [DistributionController::class, 'store'])->name('database.distribution.store');
 Route::get('/database/distribution/types', [DistributionController::class, 'types'])->name('database.distribution.types');
+
 
 
 Route::get('/dashboard', function () {

@@ -21,6 +21,8 @@
         "vue": "^3.2.36"
     },
     "dependencies": {
+        "laravel-echo": "^1.14.0",
+        "pusher-js": "^7.4.0",
         "tw-elements": "^1.0.0-alpha12",
         "vue-loader": "^17.0.0"
     }

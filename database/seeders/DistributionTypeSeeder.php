@@ -16,9 +16,10 @@ class DistributionTypeSeeder extends Seeder
   public function run()
   {
     DB::table('distribution_types')->insert([
-      ['distribution_type' => 'Primary'],
-      ['distribution_type' => 'Secondary'],
-      ['distribution_type' => 'Transformer'],
+      ['distribution_type' => 'NONE'],
+      ['distribution_type' => 'PRIMARY'],
+      ['distribution_type' => 'SECONDARY'],
+      ['distribution_type' => 'TRANSFORMER'],
     ]);
     /*
           Distribution ID

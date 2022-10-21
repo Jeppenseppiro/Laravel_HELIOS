@@ -201,10 +201,11 @@
                     <table id="dataTable" class="display compact font-montserrat">
                       <thead class="border-b bg-gray-800">
                         <tr>
-                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">#</th>
-                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">First</th>
-                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Last</th>
-                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Handle</th>
+                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Distribution ID</th>
+                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Distribution Type</th>
+                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Latitude</th>
+                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Longitude</th>
+                          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Description</th>
                         </tr>
                       </thead class="border-b">
                     </table>

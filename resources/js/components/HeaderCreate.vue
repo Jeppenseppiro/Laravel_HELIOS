@@ -4,7 +4,7 @@
       {{ title }}
     </div>
     <div class="flex space-x-3">
-      <table-row-create-component @addRowEvent="addRowEvent"/>
+      <button-table-row-create-component @addRowEvent="addRowEvent"/>
     </div>
   </div>
 </template>

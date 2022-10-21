@@ -6,7 +6,10 @@
 
 
   <div>
-    <table-distribution-component />
+    <form action="{{ route('database.distribution.store') }}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <table-distribution-component />
+    </form>
   </div>
 
 @endsection
