@@ -27,7 +27,7 @@ Run the command below to migrate the database and seed the data to populate
 php artisan migrate:fresh --seed
 ```
 
-Run the command below to migrate the database and seed the data to populate
+Run the command below let Vite watch the file changes and enables the hot refresh function (auto-refresh the page every save)
 
 ```
 npm run dev
