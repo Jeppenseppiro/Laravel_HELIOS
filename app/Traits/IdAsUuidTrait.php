@@ -9,6 +9,6 @@ trait IdAsUuidTrait
   public function initializeIdAsUuidTrait(): void
   {
     $this->keyType = 'string';
-    $this->id = Str::uuid();
+    $this->uuid = Str::uuid();
   }
 }

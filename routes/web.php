@@ -1,5 +1,6 @@
 <?php
 
+use App\DataTables\PrimaryDistributionDataTable;
 use App\Http\Controllers\DistributionController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,10 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
   })->name('map.index');
 
   //Database Section
-  Route::get('/database', function () {
-    return view('web.database.index');
-  })->name('database.index');
-
+  Route::get('/database', [DistributionController::class, 'index'])->name('database.index');
   Route::get('/database/distribution/create', [DistributionController::class, 'create'])->name('database.distribution.create');
 
   //Settings Section
