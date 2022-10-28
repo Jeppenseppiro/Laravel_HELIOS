@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Distribution;
 use App\Models\DistributionType;
+use App\DataTables\DistributionDataTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,10 +15,10 @@ class DistributionController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
+  public function index(DistributionDataTable $dataTable)
   {
     //
-
+    return $dataTable->render('web.database.index');
   }
 
   /**
@@ -105,13 +106,5 @@ class DistributionController extends Controller
   public function destroy(Distribution $distribution)
   {
     //
-  }
-
-  public function types()
-  {
-    //
-    $distributionTypes = DistributionType::get();
-    return $distributionTypes->toJson();
-    dd($distributionTypes);
   }
 }

@@ -100,8 +100,8 @@
       deleteRowTableEvent(index) {
         this.rowDistributions.splice(index, 1);
       },
-      getDistributionTypes(){
-        fetch("types")
+      async getDistributionTypes(){
+        await fetch(window.location.pathname + "../../../../api/getType")
           .then(response => response.json())
           .then(json => this.distributionTypes = json.map(values => values))
       }
